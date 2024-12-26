@@ -1,0 +1,112 @@
+/* Reset des marges et des bordures */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style global du body */
+body {
+  font-family: "Arial", sans-serif;
+  background: #000000; /* Fond clair, légèrement bleu */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-image: url("https://www.transparenttextures.com/patterns/snowflakes.png"); /* Fond avec des flocons de neige */
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* Container principal */
+.container {
+  text-align: center;
+  padding: 20px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Fond légèrement transparent pour le conteneur */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 5px solid #ff6347; /* Bordure rouge comme couleur de Noël */
+}
+
+/* Titre de la page */
+h1 {
+  font-size: 3.5rem;
+  color: #228b22; /* Vert de Noël */
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 5px rgba(255, 0, 0, 0.3); /* Ombre rouge autour du texte */
+}
+
+/* Message sous le titre */
+.message {
+  font-size: 1.5rem;
+  color: #b22222; /* Rouge Noël */
+  margin-bottom: 20px;
+}
+
+/* Style du bouton */
+#show-video-btn {
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  background-color: #ff6347; /* Rouge tomate */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#show-video-btn:hover {
+  background-color: #ff4500; /* Rouge plus intense au survol */
+}
+
+/* Conteneur de la vidéo */
+.video-container {
+  display: none; /* Cacher la vidéo au départ */
+  margin-top: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Fond sombre derrière la vidéo pour le contraste */
+}
+
+/* Taille de la vidéo - ajustement */
+#video {
+  width: 100%; /* La vidéo prend toute la largeur du conteneur */
+  max-width: 800px; /* Largeur maximale de la vidéo */
+  height: auto; /* Laisser la hauteur se mettre à l'échelle selon la largeur */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Ombre rouge autour de la vidéo */
+}
+
+/* Effet de neige qui tombe (optionnel mais amusant) */
+@keyframes snowflakes {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("https://www.transparenttextures.com/patterns/snowflakes.png");
+  opacity: 0.3;
+  animation: snowflakes 5s linear infinite;
+}
